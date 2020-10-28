@@ -1,0 +1,162 @@
+.pokeDetail_nav{
+    position: fixed;
+    z-index: 1;
+    background-color: #fff;
+    width: 30%;
+    min-width: 300px;
+    box-shadow: 0 3px 6px rgba(0,0,0,.16);
+    border-bottom-right-radius: 35px;
+    padding: 10px;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    .pokeDetail_list {
+        display: flex;
+        align-items: center;
+        .pokeDetail_pokeball {
+            width: 30px;
+            margin-right: 15px;
+            filter: drop-shadow(0 3px 6px rgba(0,0,0,.5));
+            transform: rotate(-19deg);
+            transition: transform ease .3s;
+            &:hover {
+                transform: rotate(341deg);
+            }
+        }
+        
+        h1 {
+            font-family: "Poppins",Arial;
+            font-weight: 700;
+            font-size: 30px;
+            color: #2c2c2c;
+            transition: margin-left ease .3s;
+            &:hover {
+                margin-left: 30px;
+            }
+        }
+    }
+    .pokeDetail_home {
+        width: 45px;
+        transition: transform ease .3s;
+        &:hover {
+            filter: drop-shadow(0 1px 3px rgba(0,0,0,.5));
+            transform: scale(1.1);
+        }
+    }
+}
+
+.pokeDetail_details {
+    min-height: 100vh;
+    overflow-x: hidden;
+    .pokeDetail_info {
+        padding: 80px 10% 0px;
+        font-family: 'Poppins', Arial;
+        text-transform: capitalize;
+        background: linear-gradient(rgba(116, 194, 54, 0.3) 0%, transparent 100%);
+        .pokeDetail_title {
+            margin-top: 50px;
+            h3 {
+                color: rgba(0, 0, 0, 0.5);
+                font-family: 'Poppins', Arial;
+                font-size: 30px;
+                margin-bottom: -15px;
+            }
+            h1 {
+                color: rgb(116, 194, 54);
+                font-size: 9vw;
+                line-height: 12vw;
+            }
+        }
+        .pokeDetail_about {
+            margin-top: 80px;
+            background: #fff;
+            box-shadow: 0 6px 15px rgba(0,0,0,.16);
+            border-radius: 25px 25px 0 0;
+            padding: 20px 3%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            div {
+                display: block;
+            }
+            .pokeDetail_contentImg {
+                grid-column: 1/3;
+                text-align: right;
+                height: 100px;
+                display: flex;
+                justify-content: space-between;
+                h3 {
+                    color: rgba(0,0,0,.3);
+                    font-family: "Poppins",Arial;
+                    font-size: 25px;
+                }
+                img {
+                    width: 350px;
+                    image-rendering: pixelated;
+                    margin-top: -200px;
+                    text-align: right;
+                }
+            }
+            .pokeDetail_contentInfo {
+                color: #2c2c2c;
+                .pokeDetail_tableInfo{
+                    font-size: 15px;
+                    font-family: "Lato",Arial;
+                    width: 100%;
+                    border-spacing: 0 10px;
+                    .pokeDetail_tableRowName {
+                        width: 200px;
+                    }
+                    tr:first-child td:nth-child(even){
+                        text-transform: capitalize;
+                        font-style: italic;
+                    }
+                    .pokeDetail_tableRowValue {
+                        display: flex;
+                        .pokeDetail_type {
+                            margin-right: 10px;
+                            border-radius: 30px;
+                            display: flex;
+                            flex-wrap: wrap;
+                            p {
+                                line-height: 20px;
+                                font-weight: bold;
+                                font-family: 'Poppins', Arial;
+                            }
+                        }
+                        .pokeDetail_progress{
+                            width: 100%;
+                            background: rgb(221, 221, 221);
+                            height: 15px;
+                            border-radius: 20px;
+                            .pokeDetail_progressStat {
+                                height: 15px;
+                                border-radius: 20px;
+                                font-size: 10px;
+                                line-height: 15px;
+                                color: #fff;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+            .pokeDetail_contentInfoAbilities {
+                grid-column: 1/3;
+                .pokeDetail_ability{
+                    box-shadow: 0 3px 6px rgba(0,0,0,.2);
+                    padding: 20px 20px 15px;
+                    border-radius: 20px;
+                    color: #212121;
+                    font-size: 13px;
+                    h4 {
+                        font-size: 15px;
+                        color: rgb(116, 194, 54);
+                    }
+                    p {
+                        font-family: "Lato",sans-serif;
+                    }
+                }
+            }
+        }
+    }
+}

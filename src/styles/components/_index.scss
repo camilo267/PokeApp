@@ -1,0 +1,98 @@
+div {
+    display: block;
+}
+
+.index_container {
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+.index_ball {
+    background: rgba(168,65,79,.8);
+    clip-path: ellipse(82% 54% at 49% 23%);
+    height: 80vh;
+    text-transform: uppercase;
+    padding: 40px;
+    margin-bottom: -30vh;
+    h1 {
+        font-family: 'Poppins', Arial;
+        font-weight: 700;
+        font-size: 7rem;
+        line-height: 7rem;
+        color: #ffffff;
+        position: absolute;
+        z-index: 1;
+    }
+    img {
+        width: 600px;
+        position: absolute;
+        opacity: 0.2;
+        transform: translateX(-50px) rotate(30deg) translateZ(0px);
+        bottom: 7rem;
+    }
+}
+
+.index_pokeBall{
+    height: 37vh;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1;
+    .index_pokeBallContainer {
+        width: 100px;
+        margin: 0 auto;
+        .index_link {
+            width: 100px;
+            text-align: center;
+            margin: 0 auto;
+            text-decoration: none;
+            align-items: center;
+            &:hover{
+                img{
+                    filter: drop-shadow(0 10px 10px rgba(0,0,0,.1));
+                    transform: scale(1.5) rotate(720deg) translateZ(0px);
+                } 
+                p{
+                    margin-top: 0;
+                }
+            }
+            &:active{
+                img{
+                    filter: drop-shadow(0 0px 0px rgba(0,0,0,.1));
+                    transform: scale(5) translateZ(0px);
+                }
+            }
+            img {
+                width: 100px;
+                margin: -86px auto;
+                z-index: 1;
+                filter: drop-shadow(0 10px 10px rgba(0,0,0,.5));
+                transition: transform ease .3s;
+            }
+            p {
+                color: #212121;
+                font-family: 'Poppins', Arial;
+                font-size: 14px;
+                font-weight: 600;
+                margin-top: 6.5rem;
+                text-align: center;
+                transition: margin-top ease .3s;
+            }
+        }
+    }
+
+    .index_author {
+        text-align: right;
+        font-family: 'Poppins', Arial;
+        font-weight: 700;
+        color: #212121;
+    }
+    p {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
+}
