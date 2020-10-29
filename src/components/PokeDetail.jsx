@@ -16,7 +16,6 @@ const PokeDetail = ({history}) => {
         typeName = details.types[0].type.name
         color = pokeTypes.filter(type => type.name === typeName)
     }
-    console.log(color[0].name)
 
     return (
         <div>
