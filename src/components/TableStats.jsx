@@ -18,7 +18,10 @@ const TableStats = () => {
                                 <div className="pokeDetail_progress">
                                     <div
                                         className="pokeDetail_progressStat" 
-                                        style={{width: `${stat.base_stat}%`, background: `${stat.base_stat < 50 ? 'rgb(232, 86, 92)' : 'rgb(255, 163, 94)'}`}}
+                                        style={{
+                                            width: `${stat.base_stat > 100 ? 100 : stat.base_stat}%`, 
+                                            background: `${stat.base_stat < 50 ? 'rgb(232, 86, 92)' : 'rgb(255, 163, 94)'}`
+                                        }}
                                     >
                                         {stat.base_stat}
                                     </div>

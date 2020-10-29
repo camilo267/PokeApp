@@ -1,15 +1,12 @@
 import React, { Fragment } from 'react'
 import { useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
 import Ability from './Ability'
 import NavPokeDetail from './NavPokeDetail'
 import TableInfo from './TableInfo'
 import TableStats from './TableStats'
 
 const PokeDetail = ({history}) => {
-    const {name} = useParams()
     const {details} = useSelector(store => store.pokemons)
-    console.log(details)
 
     return (
         <div>
@@ -20,10 +17,10 @@ const PokeDetail = ({history}) => {
                     <Fragment>
                         <NavPokeDetail />
                         <div className="pokeDetail_details">
-                            <div className="pokeDetail_info">
+                            <div className="pokeDetail_info animate__animated animate__headShake">
                                 <div className="pokeDetail_title">
                                     <h3>{details.id}</h3>
-                                    <h1>{name}</h1>
+                                    <h1>{details.name}</h1>
                                     <div className="pokeDetail_pokeElements">
 
                                     </div>
@@ -33,7 +30,7 @@ const PokeDetail = ({history}) => {
                                         <h3>
                                             XP: {details.base_experience}
                                         </h3>
-                                        <img src={details.sprites.front_default} alt={name}/>
+                                        <img src={details.sprites.front_default} alt={details.name}/>
                                     </div>
                                     <div className="pokeDetail_contentInfo">
                                         <h3>About</h3>

@@ -13,7 +13,7 @@ const PokeScreen = () => {
     }
 
     return (
-        <div className="index_container">
+        <div className="index_container animate__animated animate__pulse">
             <div className="index_ball">
                 <h1>pokemon app</h1>
                 <img src={pokeBall} alt="Poke Ball" />

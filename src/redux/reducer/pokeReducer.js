@@ -100,7 +100,6 @@ export const beforePokemonsAction = () => async (dispatch, getState) => {
 export const pokeDetailAction = (name) => async (dispatch) => {
     try {
         const res = await Axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`)
-        console.log(res.data)
         dispatch({
             type: POKE_DETAIL_SUCCESS,
             payload: {

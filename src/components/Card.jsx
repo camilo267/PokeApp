@@ -8,14 +8,13 @@ const Card = ({name, idx}) => {
     const dispatch = useDispatch()
 
     const hanldeDetailClick = () => {
-        dispatch(pokeDetailAction(name))
-        console.log('click')
+        dispatch(pokeDetailAction(idx+offset+1))
     }
 
     return (
         <Link
             onClick={hanldeDetailClick}
-            to={`./pokecards/${name}`}
+            to={`./pokecards/${idx+offset+1}`}
             className="pokeCards_link"
         >
             <div className="pokeCards_card">

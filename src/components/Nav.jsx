@@ -4,7 +4,7 @@ import pokeballClic from '../images/pokeballClic.png'
 
 const Nav = () => {
     return (
-        <nav className="pokeCards_nav">
+        <nav className="pokeCards_nav animate__animated animate__bounce">
             <li className="pokeCards_list">
                 <Link to="/">
                     <img src={pokeballClic} alt="Pokeball Icon"/>

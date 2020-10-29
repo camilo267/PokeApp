@@ -5,7 +5,7 @@ import home from '../images/home.png'
 
 const NavPokeDetail = () => {
     return (
-        <nav className="pokeDetail_nav">
+        <nav className="pokeDetail_nav animate__animated animate__bounce">
             <li className="pokeDetail_list">
                 <Link to="/">
                     <img src={pokeballClic} alt="Pokeball Icon" className="pokeDetail_pokeball" />
