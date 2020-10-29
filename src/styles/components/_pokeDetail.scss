@@ -52,7 +52,6 @@
         padding: 80px 10% 0px;
         font-family: 'Poppins', Arial;
         text-transform: capitalize;
-        background: linear-gradient(rgba(116, 194, 54, 0.3) 0%, transparent 100%);
         .pokeDetail_title {
             margin-top: 50px;
             h3 {
@@ -62,9 +61,43 @@
                 margin-bottom: -15px;
             }
             h1 {
-                color: rgb(116, 194, 54);
                 font-size: 9vw;
                 line-height: 12vw;
+            }
+            .pokeDetail_pokeElements {
+                display: flex;
+                .pokeDetail_typeElement {
+                    width: 50px;
+                    margin-right: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: left;
+                    z-index: auto;
+                    img {
+                        width: 100%;
+                        transition: ease .3s;
+                    }
+                    p {
+                        font-size: 12px;
+                        background: rgba(0, 0, 0, 0.4);
+                        color: #fff;
+                        border-radius: 20px;
+                        text-transform: capitalize;
+                        text-align: center;
+                        transform: translateY(-30px) scale(0) translateZ(0px);
+                        z-index: 0;
+                        transition: ease .3s;
+                    }
+                    &:hover {
+                        img {
+                            transform: scale(1.1);
+                            filter: drop-shadow(0 1px 5px rgba(0, 0, 0, 0.5));
+                        }
+                        p {
+                            transform: translateY(10px) scale(1.1) translateZ(0px);
+                        }
+                    }
+                }
             }
         }
         .pokeDetail_about {
@@ -112,15 +145,32 @@
                     }
                     .pokeDetail_tableRowValue {
                         display: flex;
-                        .pokeDetail_type {
-                            margin-right: 10px;
+                        .pokeDetail_typeElement {
                             border-radius: 30px;
+                            padding: 10px 30px 10px 0px;
                             display: flex;
                             flex-wrap: wrap;
+                            cursor: pointer;
+                            justify-content: center;
                             p {
                                 line-height: 20px;
                                 font-weight: bold;
                                 font-family: 'Poppins', Arial;
+                                transition: ease .2s;
+                            }
+                            img {
+                                width: 20px;
+                                margin-right: 10px;
+                                transition: ease .2s;
+                            }
+                            &:hover {
+                                p {
+                                    transform: scale(1.2) translateY(5px);
+                                }
+                                img {
+                                    transform: scale(1.2);
+                                    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+                                }
                             }
                         }
                         .pokeDetail_progress{

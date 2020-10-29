@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import PokemonElement from './PokemonElement'
 
 const TableInfo = () => {
     const {details} = useSelector(store => store.pokemons)
@@ -39,9 +40,7 @@ const TableInfo = () => {
                     <td className="pokeDetail_tableRowValue">
                         {
                             types.map(type => (
-                                <div className="pokeDetail_type" key={type.type.name}>
-                                    <p>{type.type.name}</p>
-                                </div>
+                                <PokemonElement key={type.type.name} name={type.type.name}/>
                             ))
                         }
                     </td>

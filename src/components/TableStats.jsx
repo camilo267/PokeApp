@@ -20,7 +20,7 @@ const TableStats = () => {
                                         className="pokeDetail_progressStat" 
                                         style={{
                                             width: `${stat.base_stat > 100 ? 100 : stat.base_stat}%`, 
-                                            background: `${stat.base_stat < 50 ? 'rgb(232, 86, 92)' : 'rgb(255, 163, 94)'}`
+                                            background: `${stat.base_stat < 51 ? 'rgb(232, 86, 92)' : (stat.base_stat > 79 ? 'rgb(190, 235, 159)' : 'rgb(255, 163, 94)')}`
                                         }}
                                     >
                                         {stat.base_stat}
