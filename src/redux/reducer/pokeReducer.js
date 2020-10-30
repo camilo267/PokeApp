@@ -11,6 +11,7 @@ const GET_POKEMONS_SUCCESS = 'GET_POKEMONS_SUCCESS'
 const NEXT_POKEMONS_SUCCESS = 'NEXT_POKEMONS_SUCCESS'
 const BEFORE_POKEMONS_SUCCESS = 'BEFORE_POKEMONS_SUCCESS'
 const POKE_DETAIL_SUCCESS = 'POKE_DETAIL_SUCCESS'
+const POKE_FILTER_SUCCESS = 'POKE_FILTER_SUCCESS'
 
 //Reducer
 export const pokeReducer = (state = initialState, action) => {
@@ -41,6 +42,12 @@ export const pokeReducer = (state = initialState, action) => {
                 ...action.payload
             }
 
+        case POKE_FILTER_SUCCESS:
+            return {
+                ...state,
+                ...action.payload
+            }
+
         default:
             return state
     }
@@ -50,12 +57,20 @@ export const pokeReducer = (state = initialState, action) => {
 export const getPokemonsAction = () => async (dispatch, getState) => {
     const offset = getState().pokemons.offset
 
+    if(localStorage.getItem('initialData')){
+        dispatch({
+            type: GET_POKEMONS_SUCCESS,
+            payload: JSON.parse(localStorage.getItem('initialData'))
+        })
+    }
+
     try {
-        const res = await Axios.get(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=20`)
+        const res = await Axios.get(`https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=24`)
         dispatch({
             type: GET_POKEMONS_SUCCESS,
             payload: res.data.results
         })
+        localStorage.setItem('initialData', JSON.stringify(res.data.results))
     } catch (error) {
         console.log(error)
     }
@@ -67,6 +82,7 @@ export const nextPokemonsAction = () => async (dispatch, getState) => {
 
     try {
         const res = await Axios.get(`https://pokeapi.co/api/v2/pokemon?offset=${next}&limit=20`)
+        console.log(res.data)
         dispatch({
             type: NEXT_POKEMONS_SUCCESS,
             payload: {
@@ -97,13 +113,28 @@ export const beforePokemonsAction = () => async (dispatch, getState) => {
     }
 }
 
-export const pokeDetailAction = (name) => async (dispatch) => {
+export const pokeDetailAction = (url) => async (dispatch) => {
     try {
-        const res = await Axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`)
+        const res = await Axios.get(url)
         dispatch({
             type: POKE_DETAIL_SUCCESS,
             payload: {
                 details: res.data
+            }
+        })
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const pokeFilter = (name) => async (dispatch, getState) => {
+    try {
+        const res = await Axios.get(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=1050`)
+        const data = res.data.results.filter(pokemon => pokemon.name.includes(name) && pokemon )
+        dispatch({
+            type: POKE_FILTER_SUCCESS,
+            payload: {
+                array: data
             }
         })
     } catch (error) {

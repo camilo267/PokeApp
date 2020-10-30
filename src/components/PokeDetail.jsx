@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
 import { pokeTypes } from '../helpers/pokemonsTypes'
+import { pokeDetailAction } from '../redux/reducer/pokeReducer'
 import Ability from './Ability'
 import NavPokeDetail from './NavPokeDetail'
 import PokemonElement from './PokemonElement'
@@ -8,6 +10,12 @@ import TableInfo from './TableInfo'
 import TableStats from './TableStats'
 
 const PokeDetail = ({history}) => {
+    const {name} = useParams()
+    document.addEventListener('DOMContentLoaded', () => {
+        dispatch(pokeDetailAction(`https://pokeapi.co/api/v2/pokemon/${name}`))
+    })
+    
+    const dispatch = useDispatch()
     const {details} = useSelector(store => store.pokemons)
     let typeName = ''
     let color = 'white'

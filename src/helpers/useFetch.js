@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react"
 
-export const useFetch = (name) => {
+export const useFetch = (url) => {
 
     const isMounted = useRef(true)
 
@@ -22,14 +22,14 @@ export const useFetch = (name) => {
             loading: true,
             error: null
         })
-        fetch(`https://pokeapi.co/api/v2/ability/${name}`)
+        fetch(url)
             .then(res => res.json())
             .then(data => {
                 if(isMounted.current){
                     setState({
                         loading: false,
                         error: null,
-                        data: data.effect_entries[0]
+                        data: data
                     })
                 }
             })
@@ -40,7 +40,7 @@ export const useFetch = (name) => {
                     error: 'No se pudo cargar la info'
                 })
             })
-    }, [name])
+    }, [url])
 
     return state
 }
