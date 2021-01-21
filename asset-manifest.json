@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/hablaCreativo/static/css/main.f5fd5891.chunk.css",
+    "main.js": "/hablaCreativo/static/js/main.ec775dde.chunk.js",
+    "main.js.map": "/hablaCreativo/static/js/main.ec775dde.chunk.js.map",
+    "runtime-main.js": "/hablaCreativo/static/js/runtime-main.ce68aff1.js",
+    "runtime-main.js.map": "/hablaCreativo/static/js/runtime-main.ce68aff1.js.map",
+    "static/js/2.c03abe6a.chunk.js": "/hablaCreativo/static/js/2.c03abe6a.chunk.js",
+    "static/js/2.c03abe6a.chunk.js.map": "/hablaCreativo/static/js/2.c03abe6a.chunk.js.map",
+    "index.html": "/hablaCreativo/index.html",
+    "static/css/main.f5fd5891.chunk.css.map": "/hablaCreativo/static/css/main.f5fd5891.chunk.css.map",
+    "static/js/2.c03abe6a.chunk.js.LICENSE.txt": "/hablaCreativo/static/js/2.c03abe6a.chunk.js.LICENSE.txt",
+    "static/media/pokeballClic.b6c6c9af.png": "/hablaCreativo/static/media/pokeballClic.b6c6c9af.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ce68aff1.js",
+    "static/js/2.c03abe6a.chunk.js",
+    "static/css/main.f5fd5891.chunk.css",
+    "static/js/main.ec775dde.chunk.js"
+  ]
+}
