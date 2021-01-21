@@ -25,7 +25,7 @@ const PokeScreen = () => {
                         <p>Click Here</p>
                     </Link>
                 </div>
-                <p className="index_author">Created by Alejandro Ruiz Sánchez</p>
+                <p className="index_author">Created by Camilo Cuervo</p>
             </div>
         </div>
     )
