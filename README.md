@@ -42,7 +42,7 @@ yarn start
 
 ## Authors
 
-* **Alejandro Ruiz Sánchez** - *Initial work* - [camilo267](https://github.com/camilo267)
+* **Camilo Cuervo** - *Initial work* - [camilo267](https://github.com/camilo267)
 
 ## License
 
